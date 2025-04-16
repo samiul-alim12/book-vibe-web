@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { CiStar } from "react-icons/ci";
 const Book = ({book}) => {
     console.log(book)
     const {bookName,author,image,review,totalPages,rating,category,tags,publisher,yearOfPublishing} = book
@@ -12,14 +12,23 @@ const Book = ({book}) => {
             alt="Shoes" />
         </figure>
         <div className="card-body">
-            <h2 className="card-title">
-            Card Title
-            <div className="badge badge-secondary">NEW</div>
+            <div className=' flex gap-4'>
+               <div className=' bg-base-200 rounded-3xl'>
+                    <h3 className=' px-3 py-2 text-lg text-[#31db0f]'>Young Adult</h3>
+               </div>
+                <div className=' bg-base-200 rounded-3xl'>
+
+                    <h3 className=' px-3 py-2 text-lg text-[#31db0f]'>Identity</h3>
+                </div>
+            </div>
+            <h2 className="card-title text-2xl font-semibold">
+            {bookName}
+            
             </h2>
-            <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-            <div className="card-actions justify-end">
-            <div className="badge badge-outline">Fashion</div>
-            <div className="badge badge-outline">Products</div>
+            <p className=' text-xl font-medium '>By: {author}</p>
+            <div className="card-actions flex justify-between">
+            <div className="badge badge-outline">{category}</div>
+            <div className=" flex gap-3 items-center">{rating} <CiStar size={20}/></div>
             </div>
         </div>
 </div>
