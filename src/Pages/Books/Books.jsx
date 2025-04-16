@@ -1,18 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { data } from 'react-router';
+import Book from "../Book/Book";
 
-const Books = () => {
-    const [allBooks,setAllBooks] = useState([])
-    useEffect(()=>{
-        fetch('booksData.json')
-        .then(res=>res.json())
-        .then(data => setAllBooks(data))
-    }
-    ,[])
-    console.log(allBooks)
+const Books = ({booksData}) => {
+
     return (
         <div>
-            <h2>Hello ami home</h2>
+            <h1 className=" text-center text-5xl font-semibold mt-10 mb-7">Books</h1>
+           <div className=" grid md:grid-cols-2 lg:grid-cols-3  grid-cols-1  gap-6 mb-8">
+                {
+                    booksData.map(book=><Book key={book.bookId} book={book}></Book>)
+                }
+           </div>
         </div>
     );
 };
