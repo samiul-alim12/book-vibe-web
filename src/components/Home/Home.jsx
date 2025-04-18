@@ -11,11 +11,11 @@ const Home = () => {
            <div>
                 <Banner></Banner>
            </div> 
-            <div>
-                <Suspense fallback={<span className=' text-center'>Loading...</span>}>
+            
+                
                     <Books booksData={booksData}></Books>
-                </Suspense>
-            </div>
+                
+            
         </div>
     );
 };
